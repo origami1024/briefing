@@ -1,0 +1,85 @@
+﻿var devices = [
+  {
+    "pic": "pic_t_off",
+    "name": "Philips Cooler",
+    "status": "Начнет охлаждать в 16:30"
+  },
+  {
+    "pic": "pic_s_on",
+    "name": "Xiaomi Yeelight LED Smart Bulb",
+    "status": "Включено"
+  },
+  {
+    "pic": "pic_s_off",
+    "name": "D-Link Omna 180 Cam",
+    "status": "Включится в 17:00"
+  },
+  {
+    "pic": "pic_t_off",
+    "name": "Elgato Eve Degree Connected",
+    "status": "Включено в 17:00"
+  },
+  {
+    "pic": "pic_s_off",
+    "name": "LIFX Mini Day & Dusk A60 E27",
+    "status": "Включится в 17:00"
+  },
+  {
+    "pic": "pic_s_on",
+    "name": "Xiaomi Mi Air Purifier 2S",
+    "status": "Включено"
+  },
+  {
+    "pic": "pic_s_off",
+    "name": "Philips Zhirui",
+    "status": "Выключено"
+  },
+  {
+    "pic": "pic_s_on",
+    "name": "Xiaomi another device",
+    "status": "Включено"
+  }
+]
+var scenarios = [
+  {
+    "pic": "pic_s_on",
+    "descr":"Выключить весь свет в доме и во дворе"
+  },
+  {
+    "pic": "pic_time",
+    "descr":"Я ухожу"
+  },
+  {
+    "pic": "pic_s_on",
+    "descr":"Включить свет в коридоре"
+  },
+  {
+    "pic": "pic_t_on",
+    "descr": "Набрать горячую ванну",
+    "status": "Начнётся в 18:00"
+  },
+  {
+    "pic": "pic_t_on",
+    "descr": "Сделать пол тёплым во всей квартире",
+  },
+  {
+    "pic": "pic_time",
+    "descr":"Тест"
+  },
+  {
+    "pic": "pic_time",
+    "descr":"Тест"
+  },
+  {
+    "pic": "pic_time",
+    "descr":"Тест"
+  },
+  {
+    "pic": "pic_time",
+    "descr":"Тест"
+  },
+  {
+    "pic": "pic_t_off",
+    "descr":"Тест10"
+  }
+]

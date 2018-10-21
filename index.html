@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Сводка</title>
+	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width">
+</head>
+<body>
+	<header id="header">
+		<ul>
+			<li><a class="nav_link nav_current" href="#">Сводка</a></li>
+			<li><a class="nav_link" href="#">Устройства</a></li>
+			<li><a class="nav_link" href="#">Сценарии</a></li>
+		</ul>
+	</header>	
+	<main id="main">
+		<div id="section1">
+			<div>
+				<h3>Главное</h3>
+				<div id="general">
+					<div id="current_brief">
+						<h3>Привет, Геннадий!</h3>
+						<div id="gen_status">Двери и окна закрыты, сигнализация включена.</div>
+						<div id="gen_weather">
+							<div class="gen_weather_column">
+								<div class="column_head">Дома</div>
+								<div class="column_body">+23</div>
+							</div>
+							<div class="gen_weather_column">
+								<div class="column_head">За окном</div>
+								<div class="column_body weather_buff">+19</div>
+							</div>
+						</div>
+					</div>
+					<div id="all_devices_wrapper">
+						<input type="image" id="scroll_down_arr" class="btn_scroll" src="assets/_M.png" alt="^" />
+						<!--<input type="image" id="scroll_up_arr" class="btn_scroll scroll_top" src="assets/_M.png" alt="x" />-->
+						<div id="all_devices">
+							<!--Generated from template and from json file-->
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+			<div id="fav_scenarios_wrapper">
+				<h3>Избранные сценарии</h3>
+				<div class="scroll_control"></div>
+				<div id="fav_scenarios">
+					<!--Generated from template and from json file-->
+				</div>
+			</div>
+		</div>
+		<div id="section2">
+			<div id="fav_devices_top">
+				<h3>Избранные устройства</h3>
+				<div id="fav_dev_groups">
+					<input type="radio" id="filter_all" class="radio"/>
+					<input type="radio" id="filter_kitchen" class="radio"/>
+					<input type="radio" id="filter_hall" class="radio"/>
+					<input type="radio" id="filter_bulbs" class="radio"/>
+					<input type="radio" id="filter_cams" class="radio"/>
+				</div>
+				<div class="scroll_control">
+					<input type="image" id="fav_arr_l" class="btn_scroll_lr" src="assets/icon_arrow_left@1x.png" alt="<" />
+					<input type="image" id="fav_arr_r" class="btn_scroll_lr right" src="assets/icon_arrow_left@1x.png" alt=">" />
+				</div>
+			</div>
+
+			<div id="fav_dev_wrapper">
+				<div id="fav_devices">
+					
+				</div>
+			</div>
+		</div>
+	</main>
+	<footer id="footer">
+		<ul>
+			<li><a class="nav_link_footer" href="#">Помощь</a></li>
+			<li><a class="nav_link_footer" href="#">Обратная связь</a></li>
+			<li><a class="nav_link_footer" href="#">Разработчикам</a></li>
+			<li><a class="nav_link_footer" href="#">Условия использования</a></li>
+		</ul>		
+	</footer>
+
+	<template id="dev_tmpl">
+		<div class="dev_card">
+			<div class="dev_card_inner_wrapper">
+				<div class="pic"></div>
+				<div class="nam"></div>
+				<div class="status"></div>
+			</div>
+		</div>
+	</template>
+	<template id="sc_tmpl">
+		<div class="scenario_card">
+			<div class="pic"></div>
+			<div class="nam"></div>
+			<div class="status"></div>
+		</div>
+	</template>
+
+	<script type="text/javascript" src="data.json"></script>
+	<script src="script.js"></script>
+
+</body>
+</html>

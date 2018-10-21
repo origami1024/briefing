@@ -1,0 +1,343 @@
+body {
+	font-family: Arial, Helvetica;
+	font-size: 16px;
+	color: #343434;
+
+}
+
+#header {
+	background-color: khaki;
+	border-bottom: 2px solid #F7F7F7;
+	margin-bottom: 10px;
+}
+#header ul li{
+  	display: inline;
+ 	margin-right: 25px;
+}
+#header ul {
+	margin: 0;
+	padding: 0;
+	width: 75%;
+	margin: 36px auto;
+}
+
+#main {
+	width: 96.5%;
+	margin:auto;
+	background-color: red;
+}
+#section1 {
+	display: flex;
+	flex-direction: row;
+}
+#section2 {
+	display: flex;
+	flex-direction: column;
+}
+
+	#general {
+		margin-left: auto;
+		margin-right: auto;
+		width: 590px; /*630-20*2*/
+		height: 291px;
+		background-image: url("assets/bg@1x.png");
+		display: flex;
+		flex-direction: row;
+		padding: 20px;
+
+
+	}
+		#current_brief {
+			display: flex;
+			flex-direction: column;
+			background-color: tan;
+		}
+		#current_brief h3 {
+			font-size: 1.625rem;
+			margin-top: 7px;
+			margin-bottom: 6px;
+		}
+		#gen_status {
+			font-size: 0.875rem;
+			color: #666666;
+			margin-top: 0px;
+			margin-bottom: 25px;
+		} 
+		#gen_weather {
+			display: flex;
+			flex-direction: row;
+		}
+
+
+		.column_head {
+			color: #9D9D9B;
+			font-size: 14px;
+			margin-bottom: 5px;
+
+		}
+		.column_body {
+			color: #333333;
+			font-size: 36px;
+			font-weight: bold;
+		}
+		.gen_weather_column {
+			margin-right: 16px ;
+		}
+
+		.weather_buff:after{
+			content: url("assets/cloud-drizzle.png");
+			
+			
+		}
+
+		#all_devices_wrapper {
+			margin-left: auto;
+			width: 200px;
+			overflow-y: hidden;
+			overflow-x: hidden;
+			position: relative;
+			height: 291px;
+			/*height: 291px;*/
+		}
+
+		#all_devices {
+			/*display: flex;
+			flex-direction: column;*/
+
+			background-color: skyblue;
+			overflow-y: scroll;
+			width: 217px;
+			height: 291px;
+			position: relative;
+			
+		}
+		.btn_scroll {
+			position: absolute;
+			z-index: 2;
+			bottom: 8px;
+			height: 16px;
+			width: 16px;
+			left: calc(50% - 8px);
+		}
+		.scroll_top {
+			top: 8px;
+			transform: rotate(180deg);
+		}
+		.btn_scroll:focus {
+			outline: none;
+		}
+
+		#wheather_icon {
+			background-image: url("assets/cloud-drizzle.png");
+			width: 26px;
+			height: 26px;
+		}
+
+#main h3 {
+	
+}
+	
+		.dev_card {
+			width: 172px;/*-14*2px padding*/
+			height: 92px;
+			min-width:172px;
+			background-color: #F7F7F7;
+			border-radius: 15px;
+			padding: 14px;
+
+			margin-bottom: 16px;
+			margin-right: 14px;
+		}
+		.nobottom {
+			margin-bottom: 0px;
+		}
+		.dev_card_inner_wrapper {
+			height: 92px;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+			
+		}
+			.pic {
+				width: 24px;
+				height: 24px;
+				margin-bottom: auto;
+			}
+			.nam {
+
+				font-size: 0.875rem;
+				font-weight: bold;
+				color: #353535;
+			}
+			.status {
+				font-size: 0.6875rem;
+				color: #A8A8A8;
+			}
+			
+			.pic_t_off {
+				background-image: url("assets/icon_temperature@1x.png");
+				background-image: 
+	    			-webkit-image-set(
+	      				url("assets/icon_temperature@1x.png") 1x,
+	      				url("assets/icon_temperature@2x.png") 2x
+	    			);
+	  			background-image: 
+	    			image-set(
+	      				url("assets/icon_temperature@1x.png") 1x,
+	      				url("assets/icon_temperature@2x.png") 2x
+	    			);
+			}
+			.pic_t_on {
+				background-image: url("assets/icon_temperature_2@1x.png");
+				background-image: 
+	    			-webkit-image-set(
+	      				url("assets/icon_temperature_2@1x.png") 1x,
+	      				url("assets/icon_temperature_2@2x.png") 2x
+	    			);
+	  			background-image: 
+	    			image-set(
+	      				url("assets/icon_temperature_2@1x.png") 1x,
+	      				url("assets/icon_temperature_2@2x.png") 2x
+	    			);
+			}
+			.pic_s_off {
+				background-image: url("assets/icon_sun@1x.png");
+				background-image: 
+	    			-webkit-image-set(
+	      				url("assets/icon_sun@1x.png") 1x,
+	      				url("assets/icon_sun@2x.png") 2x
+	    			);
+	  			background-image: 
+	    			image-set(
+	      				url("assets/icon_sun@1x.png") 1x,
+	      				url("assets/icon_sun@2x.png") 2x
+	    			);
+			}
+			.pic_s_on {
+				background-image: url("assets/icon_sun_2@1x.png");
+				background-image: 
+	    			-webkit-image-set(
+	      				url("assets/icon_sun_2@1x.png") 1x,
+	      				url("assets/icon_sun_2@2x.png") 2x
+	    			);
+	  			background-image: 
+	    			image-set(
+	      				url("assets/icon_sun_2@1x.png") 1x,
+	      				url("assets/icon_sun_2@2x.png") 2x
+	    			);
+			}
+			.pic_time {
+				background-image: url("assets/icon_scheduled@1x.png");
+			}
+#fav_scenarios_wrapper {
+	margin-left: 25px;
+	background-color: blue;
+
+
+}
+	#fav_scenarios {
+		display: grid;
+		grid-template-columns: 200px 200px 200px;
+		grid-gap: 15px;
+
+		min-width: 215px;
+		
+		height: 331px;
+		background-color: plum;
+		overflow-y: hidden;
+		overflow-x: hidden;
+	}
+		.scenario_card {
+			background-color: #F7F7F7;
+			width: 172px;
+			height: 72px;
+			
+			border-radius: 15px;
+			padding: 14px;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
+		}
+
+	#fav_devices_top {
+		display: flex;
+		flex-direction: row;
+	}
+	#fav_dev_groups {
+		margin: auto 0;
+	}
+	.scroll_control {
+		margin: auto 0;
+	}
+	.right {
+		transform: rotate(180deg);
+	}
+
+	#fav_devices {
+		display: flex;
+		flex-direction: row;
+		overflow-x: scroll;
+		background-color: rosybrown;
+		height: 140px;
+		
+	}
+	#fav_dev_wrapper {
+		height: 120px;
+		background-color: olive;
+		overflow: hidden;
+
+	}
+
+#footer {
+	background-color: coral;
+	border-top: 1px solid #F0F0F0;
+	font-size: 0.75rem;
+	width: 96.5%;
+	margin:auto;
+}
+#footer ul li{
+  	display: inline;
+ 	margin-right: 13px;
+ 	
+}
+#footer ul {
+	margin: 0;
+	padding: 0;
+	margin: 24px 0;
+	
+
+}
+
+
+
+	.nav_link {
+		color:#858585;
+		text-decoration: none;
+		font-weight: bold;
+		transition: color 0.3s ease;
+	}
+	.nav_link:visited {
+		color:#858585;
+		text-decoration: none;
+		font-weight: bold;
+	}
+	.nav_link:hover {
+		color: tomato;
+	}
+	.nav_current {
+		color:#333333;
+		
+	}
+	.nav_current:visited {
+		color:#333333;
+	}
+
+	.nav_link_footer {
+		color:#858585;
+		text-decoration: none;
+		
+	}
+	.nav_link_footer:visited {
+		color:#858585;
+		text-decoration: none;
+	}
