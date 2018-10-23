@@ -1,13 +1,15 @@
 ﻿var devices = [
-  {
+ {
     "pic": "pic_t_off",
     "name": "Philips Cooler",
     "status": "Начнет охлаждать в 16:30"
   },
   {
-    "pic": "pic_s_on",
+    "pic": "pic_s_off",
     "name": "Xiaomi Yeelight LED Smart Bulb",
-    "status": "Включено"
+    "status": "Включится в 17:00",
+    "modal": "light", 
+    "value": "13"//light, temp, floor, other...
   },
   {
     "pic": "pic_s_off",
@@ -15,9 +17,11 @@
     "status": "Включится в 17:00"
   },
   {
-    "pic": "pic_t_off",
+    "pic": "pic_t_on",
     "name": "Elgato Eve Degree Connected",
-    "status": "Включено в 17:00"
+    "status": "Включено",
+    "modal": "temp", 
+    "value": "55"
   },
   {
     "pic": "pic_s_off",
@@ -38,6 +42,13 @@
     "pic": "pic_s_on",
     "name": "Xiaomi another device",
     "status": "Включено"
+  },
+  {
+    "pic": "pic_s_on",
+    "name": "Xiaomi Warm Floor",
+    "status": "Включено",
+    "modal": "floor", 
+    "value": "23"
   }
 ]
 var scenarios = [
@@ -81,5 +92,65 @@ var scenarios = [
   {
     "pic": "pic_t_off",
     "descr":"Тест10"
+  },
+  {
+    "pic": "pic_s_on",
+    "descr":"Тест11",
+    "status": "Включено в 17:00"
+  },
+  {
+    "pic": "pic_s_on",
+    "descr":"Тест12",
+    "status": "Включено в 17:00"
+  },
+  {
+    "pic": "pic_s_on",
+    "descr":"Тест11",
+    "status": "Включено в 17:00"
+  }  ,
+  {
+    "pic": "pic_s_on",
+    "descr":"Тест11",
+    "status": "Включено в 17:00"
+  },
+  {
+    "pic": "pic_s_on",
+    "descr":"Тест11",
+    "status": "Включено в 17:00"
+  },
+  {
+    "pic": "pic_s_on",
+    "descr":"Тест11",
+    "status": "Включено в 17:00"
+  },
+  {
+    "pic": "pic_s_on",
+    "descr":"Тест11",
+    "status": "Включено в 17:00"
+  },
+  {
+    "pic": "pic_s_on",
+    "descr":"Тест11",
+    "status": "Включено в 17:00"
+  },
+  {
+    "pic": "pic_s_on",
+    "descr":"Тест11",
+    "status": "Включено в 17:00"
+  },
+  {
+    "pic": "pic_s_on",
+    "descr":"Тест11",
+    "status": "Включено в 17:00"
+  },
+  {
+    "pic": "pic_s_on",
+    "descr":"Тест11",
+    "status": "Включено в 17:00"
+  },
+  {
+    "pic": "pic_s_on",
+    "descr":"Тест11",
+    "status": "Включено в 17:00"
   }
 ]

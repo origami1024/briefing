@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Сводка</title>
 	<link rel="stylesheet" href="style.css">
+	
 	<meta name="viewport" content="width=device-width">
 </head>
 <body>
@@ -37,7 +38,7 @@
 						<input type="image" id="scroll_down_arr" class="btn_scroll" src="assets/_M.png" alt="^" />
 						<!--<input type="image" id="scroll_up_arr" class="btn_scroll scroll_top" src="assets/_M.png" alt="x" />-->
 						<div id="all_devices">
-							<!--Generated from template and from json file-->
+							<!--Generated from template and json file-->
 						</div>
 
 
@@ -45,10 +46,15 @@
 				</div>
 			</div>
 			<div id="fav_scenarios_wrapper">
-				<h3>Избранные сценарии</h3>
-				<div class="scroll_control"></div>
+				<div id="fav_scenarios_top">
+					<h3>Избранные сценарии</h3>
+					<div class="scroll_control margin-left-auto">
+						<input type="image" id="fav_s_arr_l" class="btn_scroll_lr" src="assets/icon_arrow_left@1x.png" alt="<" />
+						<input type="image" id="fav_s_arr_r" class="btn_scroll_lr right" src="assets/icon_arrow-black_left.svg" alt=">" />
+					</div>
+				</div>
 				<div id="fav_scenarios">
-					<!--Generated from template and from json file-->
+					<!--Generated from template and json file-->
 				</div>
 			</div>
 		</div>
@@ -56,21 +62,26 @@
 			<div id="fav_devices_top">
 				<h3>Избранные устройства</h3>
 				<div id="fav_dev_groups">
-					<input type="radio" id="filter_all" class="radio"/>
-					<input type="radio" id="filter_kitchen" class="radio"/>
-					<input type="radio" id="filter_hall" class="radio"/>
-					<input type="radio" id="filter_bulbs" class="radio"/>
-					<input type="radio" id="filter_cams" class="radio"/>
+					<input type="radio" name="fav_dev" id="filter_all" checked="true" />
+					<label for="filter_all">Все</label>
+					<input type="radio" name="fav_dev" id="filter_kitchen"/>
+					<label for="filter_kitchen">Кухня</label>
+					<input type="radio" name="fav_dev" id="filter_hall"/>
+					<label for="filter_hall">Зал</label>
+					<input type="radio" name="fav_dev" id="filter_bulbs"/>
+					<label for="filter_bulbs">Лампочки</label>
+					<input type="radio" name="fav_dev" id="filter_cams"/>
+					<label for="filter_cams">Камеры</label>
 				</div>
-				<div class="scroll_control">
+				<div class="scroll_control margin-left-auto">
 					<input type="image" id="fav_arr_l" class="btn_scroll_lr" src="assets/icon_arrow_left@1x.png" alt="<" />
-					<input type="image" id="fav_arr_r" class="btn_scroll_lr right" src="assets/icon_arrow_left@1x.png" alt=">" />
+					<input type="image" id="fav_arr_r" class="btn_scroll_lr right" src="assets/icon_arrow-black_left.svg" alt=">" />
 				</div>
 			</div>
 
 			<div id="fav_dev_wrapper">
 				<div id="fav_devices">
-					
+					<!--Generated from template and json file-->
 				</div>
 			</div>
 		</div>
@@ -84,12 +95,57 @@
 		</ul>		
 	</footer>
 
+	<div id="modal">
+		<div id="modal_content">
+			<div id="modal_main">
+				<div id="modal_header">
+					<div id="modal_header_div1">
+						<div id="modal_device" class="modal_nam">Xiaomi Warm Floor</div>
+						<div id="modal_status" class="modal_status">Включено</div>
+					</div>
+					<div id="modal_header_div2">
+						<div id="modal_value" class="modal_value" >+23</div>
+						<div id="modal_pic" class="modal_pic modal_pic_t_on"></div>
+					</div>
+				</div>
+				<div id="modal_body">
+					<div id="bulb_slide_container">
+						<div id="bulb_radios">
+							<input type="radio" name="frost" id="manual_temp" checked="true" />
+							<label for="manual_temp">Вручную</label>
+							<input type="radio" name="frost" id="cold_temp"/>
+							<label for="cold_temp">Холодно</label>
+							<input type="radio" name="frost" id="warm_temp"/>
+							<label for="warm_temp">Тепло</label>
+							<input type="radio" name="frost" id="hot_temp"/>
+							<label for="hot_temp">Жарко</label>
+							
+						</div>
+						<div id="bulb_range_label_l">-10</div>
+						<div id="bulb_range_label_r">+30</div>
+  						<input type="range" min="-10" max="+30" value="50" class="slider" id="bulb_range">
+  					
+					</div>
+				</div>
+				<div id="modal_footer">	
+				</div>
+			</div>
+			<div id="modal_btns_wrapper">
+				<input type="button" id="modal_apply" class="modal_btns" value="Применить" />
+				<input type="button" id="modal_close" class="modal_btns modal_btns_marg_left" value="Закрыть"/>
+			</div>
+		</div>		
+	</div>
+
+
 	<template id="dev_tmpl">
 		<div class="dev_card">
 			<div class="dev_card_inner_wrapper">
 				<div class="pic"></div>
 				<div class="nam"></div>
 				<div class="status"></div>
+				<input value="0" class="mode"/>
+				<input value="0" class="value"/>
 			</div>
 		</div>
 	</template>
