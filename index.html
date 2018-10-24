@@ -35,7 +35,7 @@
 						</div>
 					</div>
 					<div id="all_devices_wrapper">
-						<input type="image" id="scroll_down_arr" class="btn_scroll" src="assets/_m.png" alt="^" />
+						<input type="image" id="scroll_down_arr" class="btn_scroll" src="assets/v_scroll.png" alt="^" />
 						<!--<input type="image" id="scroll_up_arr" class="btn_scroll scroll_top" src="assets/_M.png" alt="x" />-->
 						<div id="all_devices">
 							<!--Generated from template and json file-->
@@ -99,18 +99,18 @@
 		<div id="modal_content">
 			<div id="modal_main">
 				<div id="modal_header">
-					<div id="modal_header_div1">
+					<div id="modal_header_left">
 						<div id="modal_device" class="modal_nam">Xiaomi Warm Floor</div>
 						<div id="modal_status" class="modal_status">Включено</div>
 					</div>
-					<div id="modal_header_div2">
+					<div id="modal_header_right">
 						<div id="modal_value" class="modal_value" >+23</div>
 						<div id="modal_pic" class="modal_pic modal_pic_t_on"></div>
 					</div>
 				</div>
 				<div id="modal_body">
-					<div id="bulb_slide_container">
-						<div id="bulb_radios">
+					<div id="temp_slide_container">
+						<div id="temp_bulb_radios">
 							<input type="radio" name="frost" id="manual_temp" checked="true" />
 							<label for="manual_temp">Вручную</label>
 							<input type="radio" name="frost" id="cold_temp"/>
@@ -121,10 +121,28 @@
 							<label for="hot_temp">Жарко</label>
 							
 						</div>
-						<div id="bulb_range_label_l">-10</div>
-						<div id="bulb_range_label_r">+30</div>
+  						<input type="range" min="-10" max="+30" value="50" class="slider" id="temp_range">
+  						<div id="temp_l" class="range_label">-10</div>
+						<div id="temp_r" class="range_label">+30</div>
+					</div>
+					<div id="bulb_slide_container">
+						<div id="temp_bulb_radios">
+							<input type="radio" name="lightrad" id="manual_light" checked="true" />
+							<label for="manual_light">Вручную</label>
+							<input type="radio" name="lightrad" id="day_light"/>
+							<label for="day_light">Дневной свет</label>
+							<input type="radio" name="lightrad" id="even_light"/>
+							<label for="even_light">Вечерний свет</label>
+							<input type="radio" name="lightrad" id="dawn_light"/>
+							<label for="dawn_light">Рассвет</label>
+							
+						</div>
   						<input type="range" min="-10" max="+30" value="50" class="slider" id="bulb_range">
-  					
+  						<div id="light_l" class="range_label"></div>
+						<div id="light_r" class="range_label"></div>
+					</div>
+					<div id="floor_slide_container">
+						
 					</div>
 				</div>
 				<div id="modal_footer">	
