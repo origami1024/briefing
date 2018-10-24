@@ -656,4 +656,5 @@ body {
 
 .notouch {
 	touch-action: none;
+	background-color: gold;
 }
