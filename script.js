@@ -188,7 +188,7 @@ Scroll = (
 
 function modal_show(e) {
 	modal.style.display = "flex";
-	Scroll.disable(0,window.scrollY);
+	Scroll.disable(window.scrollX,window.scrollY);
 	main.classList.add("blurred");
 	if (e.target.querySelector(".nam")){
 		md = e.target;
