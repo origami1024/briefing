@@ -604,7 +604,7 @@ body {
 	position: absolute;
 	top:calc(50% - 5px);
 	font-weight: bold;
-	font-size: 1rem;
+	font-size: 3rem;
 	margin-left: 24px; 
 	color: #F4FAFE;
 	z-index: 1;
