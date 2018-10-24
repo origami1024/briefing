@@ -190,7 +190,7 @@ function modal_show(e) {
 	modal.style.display = "flex";
 	Scroll.disable(window.scrollX,window.scrollY);
 	main.classList.add("blurred");
-	main.classList.add("notouch");
+	//main.classList.add("notouch");
 	document.body.classList.add("notouch");
 	if (e.target.querySelector(".nam")){
 		md = e.target;
@@ -271,6 +271,7 @@ function scroll_l(){
 function afterModal() {
 	modal.style.display = "none";
 	main.classList.remove("blurred");
+	document.body.classList.remove("notouch");
 	Scroll.enable();
 }
 modal_apply.addEventListener("click", function(){alert("Не применено!")});
