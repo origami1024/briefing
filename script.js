@@ -190,6 +190,8 @@ function modal_show(e) {
 	modal.style.display = "flex";
 	Scroll.disable(window.scrollX,window.scrollY);
 	main.classList.add("blurred");
+	main.classList.add("notouch");
+	document.body.classList.add("notouch");
 	if (e.target.querySelector(".nam")){
 		md = e.target;
 	} else {

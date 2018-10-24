@@ -654,6 +654,6 @@ body {
 
 	}
 
-.notoverflown {
-	overflow-y : auto;
+.notouch {
+	touch-action: none;
 }
