@@ -152,10 +152,43 @@ function load_scenarios() {
 	}
 }
 
+Scroll = (
+    function(){
+          var x,y;
+         function hndlr(){
+            window.scrollTo(x,y);
+            //return;
+          }  
+          return {
+
+               disable : function(x1,y1){
+                    x = x1;
+                    y = y1;
+                   if(window.addEventListener){
+                       window.addEventListener("scroll",hndlr);
+                   } 
+                   else{
+                        window.attachEvent("onscroll", hndlr);
+                   }     
+                   hndlr()
+
+               },
+               enable: function(){
+                      if(window.removeEventListener){
+                         window.removeEventListener("scroll",hndlr);
+                      }
+                      else{
+                        window.detachEvent("onscroll", hndlr);
+                      }
+               } 
+
+          }
+    })();
+
 
 function modal_show(e) {
-	//console.log("1");
 	modal.style.display = "flex";
+	Scroll.disable(0,window.scrollY);
 	main.classList.add("blurred");
 	if (e.target.querySelector(".nam")){
 		md = e.target;
@@ -233,9 +266,14 @@ function scroll_l(){
 
 }
 //modal
+function afterModal() {
+	modal.style.display = "none";
+	main.classList.remove("blurred");
+	Scroll.enable();
+}
 modal_apply.addEventListener("click", function(){alert("Не применено!")});
-modal_close.addEventListener("click", function(){modal.style.display = "none";main.classList.remove("blurred");});
-modal.addEventListener("click", function(){if (event.target == modal){modal.style.display = "none";main.classList.remove("blurred");}});
+modal_close.addEventListener("click", function(){afterModal()});
+modal.addEventListener("click", function(){if (event.target == modal){afterModal();}});
 
 fav_s_arr_r.addEventListener("click", nextpage);
 fav_s_arr_l.addEventListener("click", prevpage);
