@@ -14,3 +14,5 @@ TODO:
 11) header - moving with viewport on mobile
 13) функциональность слайдеров
 14) круглый слайдер съезжает на загрузке
+
+15)@media on mid size screens
