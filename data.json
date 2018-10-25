@@ -8,7 +8,7 @@
     "pic": "pic_s_off",
     "name": "Xiaomi Yeelight LED Smart Bulb",
     "status": "Включится в 17:00",
-    "modal": "light", 
+    "modal": "bulb_slide_container", 
     "value": "13"//light, temp, floor, other...
   },
   {
@@ -20,7 +20,7 @@
     "pic": "pic_t_on",
     "name": "Elgato Eve Degree Connected",
     "status": "Включено",
-    "modal": "temp", 
+    "modal": "temp_slide_container", 
     "value": "55"
   },
   {
@@ -47,7 +47,7 @@
     "pic": "pic_s_on",
     "name": "Xiaomi Warm Floor",
     "status": "Включено",
-    "modal": "floor", 
+    "modal": "floor_slide_container", 
     "value": "23"
   }
 ]

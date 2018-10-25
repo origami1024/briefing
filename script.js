@@ -212,6 +212,11 @@ function modal_show(e) {
 		modal_pic.classList = ["modal_pic modal_pic_t_on"];
 	}
 	modal_value.textContent = md.querySelector(".value").value;
+	slider_mode = md.querySelector(".mode").value;
+	//
+	//console.log(slider_mode);
+	document.getElementById(slider_mode).style.display = "flex";
+	
 }
 
 function load_devices_h() {
@@ -238,9 +243,6 @@ function load_devices_h() {
 		fav_devices.appendChild(clone);
 		
 
-		//add listeners to ones with attr
-
-		
 		
 	}
 }
@@ -273,6 +275,9 @@ function afterModal() {
 	main.classList.remove("blurred");
 	document.body.classList.remove("notouch");
 	Scroll.enable();
+	floor_slide_container.style.display = "none";
+	bulb_slide_container.style.display = "none";
+	temp_slide_container.style.display = "none";
 }
 modal_apply.addEventListener("click", function(){alert("Не применено!")});
 modal_close.addEventListener("click", function(){afterModal()});
@@ -293,3 +298,36 @@ load_devices_h();
 
 
 
+
+
+
+var ScaleExample = function() {};
+
+    ScaleExample.prototype = Object.create(Ui.prototype);
+
+    ScaleExample.prototype.createElement = function() {
+
+        Ui.prototype.createElement.apply(this, arguments);
+        this.addComponent(new Ui.Pointer({
+            type: 'Triangle',
+            pointerWidth: 10,
+            pointerHeight: 6,
+            offset: 44
+        }));
+
+        this.addComponent(new Ui.Arc({
+	    	arcWidth: 0,
+		    outerRadius: 100,innerRadius: 100
+	  	}));
+	  	this.merge(this.options, {arcWidth: 0,outerRadius: 100,innerRadius: 100});
+	  	var arc = new Ui.El.Arc(this.options);
+	  	arc.setAngle(this.options.anglerange);
+	  	this.el.node.appendChild(arc.node);
+	  	
+	  	ftext = new Ui.Text();
+	  	this.addComponent(ftext);
+	  	
+ 		this.el.node.setAttribute("class", "ScaleExample");
+    }
+
+    new Knob(document.getElementById('knobo'), new ScaleExample());
