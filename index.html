@@ -53,8 +53,10 @@
 						<input type="image" id="fav_s_arr_r" class="btn_scroll_lr right" src="assets/icon_arrow-black_left.svg" alt=">" />
 					</div>
 				</div>
-				<div id="fav_scenarios">
-					<!--Generated from template and json file-->
+				<div id="fav_scen_inner_wrapper">
+					<div id="fav_scenarios">
+						<!--Generated from template and json file-->
+					</div>
 				</div>
 			</div>
 		</div>
@@ -62,17 +64,20 @@
 			<div id="fav_devices_top">
 				<h3>Избранные устройства</h3>
 				<div id="fav_dev_groups">
-					<input type="radio" name="fav_dev" id="filter_all" checked="true" />
+					<input type="radio" name="fav_dev" id="filter_all" checked="true" value="Все" />
 					<label for="filter_all">Все</label>
-					<input type="radio" name="fav_dev" id="filter_kitchen"/>
+					<input type="radio" name="fav_dev" id="filter_kitchen" value="Кухня"/>
 					<label for="filter_kitchen">Кухня</label>
-					<input type="radio" name="fav_dev" id="filter_hall"/>
+					<input type="radio" value="Зал" name="fav_dev" id="filter_hall" />
 					<label for="filter_hall">Зал</label>
-					<input type="radio" name="fav_dev" id="filter_bulbs"/>
-					<label for="filter_bulbs">Лампочки</label>
-					<input type="radio" name="fav_dev" id="filter_cams"/>
-					<label for="filter_cams">Камеры</label>
+					<input type="radio" name="fav_dev" id="filter_bulb" value="Лампочки"/>
+					<label for="filter_bulb">Лампочки</label>
+					<input type="radio" name="fav_dev" id="filter_cam" value="Камеры"/>
+					<label for="filter_cam">Камеры</label>
 				</div>
+				<input type="button" id="fav_dev_top_menu_btn" value = "Все    " />
+
+
 				<div class="scroll_control margin-left-auto">
 					<input type="image" id="fav_arr_l" class="btn_scroll_lr" src="assets/icon_arrow_left@1x.png" alt="<" />
 					<input type="image" id="fav_arr_r" class="btn_scroll_lr right" src="assets/icon_arrow-black_left.svg" alt=">" />
@@ -142,11 +147,15 @@
 						<div id="light_r" class="range_label"></div>
 					</div>
 					<div id="floor_slide_container">
-						<div id="knobo1"></div>
-						<input id="knobo" class="preset2" type="range" min="1" max="100" data-width="266" data-height="266" data-angleOffset="220" data-angleRange="280">
+						<div id="knobo1">
+							<input id="knobo" class="preset2" type="range" min="-10" max="+30" data-width="266" data-height="266" data-angleOffset="220" data-angleRange="280">
+							
+						</div>
+						
 					</div>
 				</div>
 				<div id="modal_footer">	
+					
 				</div>
 			</div>
 			<div id="modal_btns_wrapper">

@@ -1,4 +1,4 @@
-
+var modal_current = "";
 var the_page = 0;
 
 var isScrolling;
@@ -117,13 +117,6 @@ function checkdisabled(p,pp) {
 }
 
 function load_scenarios() {
-//!on scenario load, decide which buttons enabled
-//!on page change, decide which buttons enabled
-//!on load decide how many pages, and current one, store in variable
-//!on load set display to each
-//?on btn clicks change display?
-//animation???
-//watch a vidoe on animation
 
 	for (var i = 0; i < scenarios.length; i++) {
 		var clone = document.importNode(sc_tmpl.content, true);
@@ -213,9 +206,24 @@ function modal_show(e) {
 	}
 	modal_value.textContent = md.querySelector(".value").value;
 	slider_mode = md.querySelector(".mode").value;
+	
+	
+
+	//get the index from data correspondent to the current card
+	//to use it in valueApply
+	if (md.querySelector(".dev_card_inner_wrapper")){
+		modal_current = md.id.slice(-1);
+	} else {
+		modal_current = md.parentElement.id.slice(-1);
+	}
+	console.log(devices[modal_current].value + "!");
+	knobo.value = devices[modal_current].value;
+	bulb_range.value = devices[modal_current].value;
+	temp_range.value = devices[modal_current].value;
 	//
-	//console.log(slider_mode);
+	//console.log(modal_current + "!");
 	document.getElementById(slider_mode).style.display = "flex";
+	ftext.update(0,knobo.value);
 	
 }
 
@@ -234,8 +242,8 @@ function load_devices_h() {
 		status2.textContent = devices[i]["status"];
 		mode.value = devices[i]["modal"];
 		value.value = devices[i]["value"];
-		clone.querySelector(".dev_card").classList.add("nobottom");
 
+		clone.querySelector(".dev_card").id = "dev" + i;
 		if (devices[i]["modal"]){
 			clone.querySelector(".dev_card").addEventListener("click", modal_show);
 		}
@@ -278,8 +286,48 @@ function afterModal() {
 	floor_slide_container.style.display = "none";
 	bulb_slide_container.style.display = "none";
 	temp_slide_container.style.display = "none";
+	modal_current = "";
+
 }
-modal_apply.addEventListener("click", function(){alert("Не применено!")});
+function modalApply(){
+	if (devices[modal_current].modal == "floor_slide_container"){
+		devices[modal_current].value = knobo.value;
+	} else if (devices[modal_current].modal == "bulb_slide_container"){
+		devices[modal_current].value = bulb_range.value;
+	} else if (devices[modal_current].modal == "temp_slide_container"){
+		devices[modal_current].value = temp_range.value;
+	}
+	console.log(kno.value);
+	afterModal();
+}
+
+function fav_group_change(e) {
+	//alert(e.target.id)
+	filter = e.target.id;
+	filter = filter.substring(7,);
+	for (var i = 0; i < devices.length; i++) {
+		if ((devices[i].tags.includes(filter)) || (filter =="all")) {
+			document.getElementById("dev" + i).style.display = "block";
+		} else {
+			document.getElementById("dev" + i).style.display = "none";
+		}	
+	}
+	fav_dev_top_menu_btn.value = e.target.value + "    ";
+	
+	if (window.innerWidth<451){
+		fav_dev_top_menu_btn.style.backgroundImage = "url('assets/icon_filter_dropdown.svg')";
+		fav_dev_groups.style.display="none";
+	}
+}
+
+
+filter_all.addEventListener("click", fav_group_change);
+filter_kitchen.addEventListener("click", fav_group_change);
+filter_hall.addEventListener("click", fav_group_change);
+filter_bulb.addEventListener("click", fav_group_change);
+filter_cam.addEventListener("click", fav_group_change);
+
+modal_apply.addEventListener("click", function(){modalApply()});
 modal_close.addEventListener("click", function(){afterModal()});
 modal.addEventListener("click", function(){if (event.target == modal){afterModal();}});
 
@@ -295,17 +343,42 @@ load_scenarios();
 load_devices_h();
 
 
+fav_dev_top_menu_btn.addEventListener("click", favDevDropdown);
+
+function favDevDropdown(e) {
+
+	if (["none", ""].includes(fav_dev_groups.style.display)) {
+
+		fav_dev_groups.style.display="flex";
+		fav_dev_top_menu_btn.style.backgroundImage = "url('assets/icon_arrow-black_left.svg')";
+	} else {
+		fav_dev_top_menu_btn.style.backgroundImage = "url('assets/icon_filter_dropdown.svg')";
+		fav_dev_groups.style.display="none";
+		
+	}
+}
+
+//media fav_dev_groups display
+function showDevGroups(x) {
+    if (x.matches) { // If media query matches
+        fav_dev_groups.style.display="flex";
+    } else {
+        fav_dev_groups.style.display="none";
+    }
+}
+var mqw450 = window.matchMedia("(min-width: 451px)");
+showDevGroups(mqw450)
+mqw450.addListener(showDevGroups)
 
 
 
 
+var ftext;
+var thumbler = function() {};
 
+    thumbler.prototype = Object.create(Ui.prototype);
 
-var ScaleExample = function() {};
-
-    ScaleExample.prototype = Object.create(Ui.prototype);
-
-    ScaleExample.prototype.createElement = function() {
+    thumbler.prototype.createElement = function() {
 
         Ui.prototype.createElement.apply(this, arguments);
         this.addComponent(new Ui.Pointer({
@@ -324,10 +397,14 @@ var ScaleExample = function() {};
 	  	arc.setAngle(this.options.anglerange);
 	  	this.el.node.appendChild(arc.node);
 	  	
-	  	ftext = new Ui.Text();
+	  	ftext = new Ui.Text(this.value);
 	  	this.addComponent(ftext);
 	  	
- 		this.el.node.setAttribute("class", "ScaleExample");
+ 		this.el.node.setAttribute("class", "thumbler");
     }
 
-    new Knob(document.getElementById('knobo'), new ScaleExample());
+    kno = new Knob(document.getElementById('knobo'), new thumbler());
+
+
+
+

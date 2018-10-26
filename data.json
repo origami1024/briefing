@@ -1,52 +1,61 @@
 ﻿var devices = [
- {
+  {
     "pic": "pic_t_off",
     "name": "Philips Cooler",
-    "status": "Начнет охлаждать в 16:30"
+    "status": "Начнет охлаждать в 16:30",
+    "tags": ["kitchen"] 
   },
   {
     "pic": "pic_s_off",
     "name": "Xiaomi Yeelight LED Smart Bulb",
     "status": "Включится в 17:00",
+    "tags": ["kitchen", "bulb"],
     "modal": "bulb_slide_container", 
     "value": "13"//light, temp, floor, other...
   },
   {
     "pic": "pic_s_off",
     "name": "D-Link Omna 180 Cam",
+    "tags": ["hall", "camera"],
     "status": "Включится в 17:00"
   },
   {
     "pic": "pic_t_on",
     "name": "Elgato Eve Degree Connected",
     "status": "Включено",
+    "tags": ["hall", "heater"],
     "modal": "temp_slide_container", 
     "value": "55"
   },
   {
     "pic": "pic_s_off",
     "name": "LIFX Mini Day & Dusk A60 E27",
-    "status": "Включится в 17:00"
+    "status": "Включится в 17:00",
+    "tags": ["kitchen", "cam"]
   },
   {
     "pic": "pic_s_on",
     "name": "Xiaomi Mi Air Purifier 2S",
-    "status": "Включено"
+    "status": "Включено",
+    "tags": ["hall"]
   },
   {
     "pic": "pic_s_off",
     "name": "Philips Zhirui",
-    "status": "Выключено"
+    "status": "Выключено",
+    "tags": ["hall", "bulb"]
   },
   {
     "pic": "pic_s_on",
     "name": "Xiaomi another device",
-    "status": "Включено"
+    "status": "Включено",
+    "tags": ["balcony"]
   },
   {
     "pic": "pic_s_on",
     "name": "Xiaomi Warm Floor",
     "status": "Включено",
+    "tags": ["hall", "heater"],
     "modal": "floor_slide_container", 
     "value": "23"
   }

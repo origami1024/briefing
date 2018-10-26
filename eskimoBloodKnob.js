@@ -1,3 +1,5 @@
+//https://github.com/eskimoblood/jim-knopf
+
 var Knob;
 Knob = function(input, ui) {
   var container = document.createElement('div');
@@ -333,7 +335,7 @@ Ui.Text.prototype.createElement = function(parentEl) {
 };
 
 Ui.Text.prototype.update = function(percent, value) {
-  this.el.node.textContent = "+" + value;
+  this.el.node.textContent = (value>0) ? "+" + value : value;
   this.el.center(this.parentEl);
 };
 
@@ -420,12 +422,14 @@ Ui.El.Text = function(text, x, y, width, height) {
     width: width,
     height: height
   });
-  this.node.textContent = text;
+  this.node.textContent = "text";
+  
 };
 
 Ui.El.Text.prototype = Object.create(Ui.El.prototype);
 
 Ui.El.Text.prototype.center = function(element) {
+  
   var width = element.getAttribute('width');
   var height = element.getAttribute('height');
   this.attr('x', width / 2 - this.node.getBBox().width / 2);
