@@ -46,7 +46,7 @@ body {
 		width: 590px; /*630-20*2*/
 		height: 291px;
 		background-image: url("assets/bg@1x.png");
-		border-radius: 16px;
+		border-radius: 16px 16px 16px 16px;
 		
 		display: flex;
 		flex-direction: row;
@@ -931,13 +931,12 @@ body {
 		content: url("assets/cloud-drizzle19.png");
 	}
 	#general {
-		min-width: 295px;
+		min-width: 290px;
 		width: calc(100% - 40px);
+
 		height: 242px;
 		margin-left: 0;
 		margin-right: 0;
-	}
-	#general {
 		flex-direction: column;
 	}
 	#all_devices {
