@@ -9,29 +9,29 @@
     "pic": "pic_s_off",
     "name": "Xiaomi Yeelight LED Smart Bulb",
     "status": "Включится в 17:00",
-    "tags": ["kitchen", "bulb"],
+    "tags": ["kitchen", "bulb", "cam"],
     "modal": "bulb_slide_container", 
     "value": "13"//light, temp, floor, other...
   },
   {
     "pic": "pic_s_off",
     "name": "D-Link Omna 180 Cam",
-    "tags": ["hall", "camera"],
+    "tags": ["hall", "bulb"],
     "status": "Включится в 17:00"
   },
   {
     "pic": "pic_t_on",
     "name": "Elgato Eve Degree Connected",
     "status": "Включено",
-    "tags": ["hall", "heater"],
+    "tags": ["hall", "heater", "cam"],
     "modal": "temp_slide_container", 
-    "value": "55"
+    "value": "29"
   },
   {
     "pic": "pic_s_off",
     "name": "LIFX Mini Day & Dusk A60 E27",
     "status": "Включится в 17:00",
-    "tags": ["kitchen", "cam"]
+    "tags": ["kitchen"]
   },
   {
     "pic": "pic_s_on",
@@ -55,7 +55,7 @@
     "pic": "pic_s_on",
     "name": "Xiaomi Warm Floor",
     "status": "Включено",
-    "tags": ["hall", "heater"],
+    "tags": ["hall", "heater", "cam"],
     "modal": "floor_slide_container", 
     "value": "23"
   }

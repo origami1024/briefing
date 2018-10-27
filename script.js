@@ -184,6 +184,7 @@ function modal_show(e) {
 	Scroll.disable(window.scrollX,window.scrollY);
 	main.classList.add("blurred");
 	//main.classList.add("notouch");
+	hamburger_cb.checked = false;
 	document.body.classList.add("notouch");
 	if (e.target.querySelector(".nam")){
 		md = e.target;
@@ -216,12 +217,18 @@ function modal_show(e) {
 	} else {
 		modal_current = md.parentElement.id.slice(-1);
 	}
-	console.log(devices[modal_current].value + "!");
 	knobo.value = devices[modal_current].value;
 	bulb_range.value = devices[modal_current].value;
 	temp_range.value = devices[modal_current].value;
-	//
-	//console.log(modal_current + "!");
+
+	if ((slider_mode!="bulb_slide_container") && (window.innerWidth>450)) {
+		modal_value.style.display = "block";
+		(devices[modal_current].value>0) ? modal_value.textContent = "+" + devices[modal_current].value : modal_value.textContent = devices[modal_current].value;
+	} else {
+		modal_value.style.display = "none";
+	}
+
+
 	document.getElementById(slider_mode).style.display = "flex";
 	ftext.update(0,knobo.value);
 	
@@ -297,7 +304,6 @@ function modalApply(){
 	} else if (devices[modal_current].modal == "temp_slide_container"){
 		devices[modal_current].value = temp_range.value;
 	}
-	console.log(kno.value);
 	afterModal();
 }
 
@@ -337,6 +343,74 @@ fav_arr_r.addEventListener("click", scroll_r);
 fav_arr_l.addEventListener("click", scroll_l);
 
 
+function blurAway() {
+	setTimeout(function() {
+		hamburger_cb.checked = false;
+		}, 50);
+	
+}
+hamburger_cb.addEventListener("blur", blurAway);
+
+
+function modal_temp_radios() {
+	if (cold_temp.checked==true) {
+		temp_range.value = -5;} 
+	else if (warm_temp.checked==true) {
+		temp_range.value = 15;}
+	else if (hot_temp.checked==true) {
+		temp_range.value = 35;}
+}
+function modal_bulb_radios() {
+	if (day_light.checked==true) {
+		bulb_range.value = -5;} 
+	else if (even_light.checked==true) {
+		bulb_range.value = 15;}
+	else if (dawn_light.checked==true) {
+		bulb_range.value = 35;}
+}
+
+function temp_range_auto_radios() {
+	switch (temp_range.value) {
+		case "-5":
+			cold_temp.checked = true;
+			break;
+		case "15":
+			warm_temp.checked = true;
+			break
+		case "35":
+			warm_temp.checked = true;
+			break;
+		default:
+			manual_temp.checked = true;
+	}
+}
+function bulb_range_auto_radios() {
+	switch (bulb_range.value) {
+		case "-5":
+			day_light.checked = true;
+			break;
+		case "15":
+			even_light.checked = true;
+			break
+		case "35":
+			dawn_light.checked = true;
+			break;
+		default:
+			manual_light.checked = true;
+	}
+}
+
+cold_temp.addEventListener("click", modal_temp_radios);
+warm_temp.addEventListener("click", modal_temp_radios);
+hot_temp.addEventListener("click", modal_temp_radios);
+day_light.addEventListener("click", modal_bulb_radios);
+even_light.addEventListener("click", modal_bulb_radios);
+dawn_light.addEventListener("click", modal_bulb_radios);
+
+temp_range.addEventListener("change", temp_range_auto_radios);
+bulb_range.addEventListener("change", bulb_range_auto_radios);
+
+
 
 load_devices_v();
 load_scenarios();
@@ -372,38 +446,33 @@ mqw450.addListener(showDevGroups)
 
 
 
-
 var ftext;
 var thumbler = function() {};
+thumbler.prototype = Object.create(Ui.prototype);
+thumbler.prototype.createElement = function() {
+    Ui.prototype.createElement.apply(this, arguments);
+    this.addComponent(new Ui.Pointer({
+        type: 'Triangle',
+        pointerWidth: 10,
+        pointerHeight: 6,
+        offset: 44
+    }));
 
-    thumbler.prototype = Object.create(Ui.prototype);
-
-    thumbler.prototype.createElement = function() {
-
-        Ui.prototype.createElement.apply(this, arguments);
-        this.addComponent(new Ui.Pointer({
-            type: 'Triangle',
-            pointerWidth: 10,
-            pointerHeight: 6,
-            offset: 44
-        }));
-
-        this.addComponent(new Ui.Arc({
-	    	arcWidth: 0,
-		    outerRadius: 100,innerRadius: 100
-	  	}));
-	  	this.merge(this.options, {arcWidth: 0,outerRadius: 100,innerRadius: 100});
-	  	var arc = new Ui.El.Arc(this.options);
-	  	arc.setAngle(this.options.anglerange);
-	  	this.el.node.appendChild(arc.node);
-	  	
-	  	ftext = new Ui.Text(this.value);
-	  	this.addComponent(ftext);
-	  	
- 		this.el.node.setAttribute("class", "thumbler");
-    }
-
-    kno = new Knob(document.getElementById('knobo'), new thumbler());
+    this.addComponent(new Ui.Arc({
+    	arcWidth: 0,
+	    outerRadius: 100,innerRadius: 100
+  	}));
+  	this.merge(this.options, {arcWidth: 0,outerRadius: 100,innerRadius: 100});
+  	var arc = new Ui.El.Arc(this.options);
+  	arc.setAngle(this.options.anglerange);
+  	this.el.node.appendChild(arc.node);
+  	
+  	ftext = new Ui.Text(this.value);
+  	this.addComponent(ftext);
+  	
+	this.el.node.setAttribute("class", "thumbler");
+}
+kno = new Knob(document.getElementById('knobo'), new thumbler());
 
 
 

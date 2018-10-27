@@ -9,8 +9,9 @@
 </head>
 <body>
 	<header id="header">
-		<input type="checkbox"/>
+		<input id="hamburger_cb" type="checkbox"/>
 		<ul id="menu">
+			<li><a class="nav_link" href="events.html">События</a></li>
 			<li><a class="nav_link nav_current" href="#">Сводка</a></li>
 			<li><a class="nav_link" href="#">Устройства</a></li>
 			<li><a class="nav_link" href="#">Сценарии</a></li>
@@ -116,7 +117,7 @@
 				</div>
 				<div id="modal_body">
 					<div id="temp_slide_container">
-						<div id="temp_bulb_radios">
+						<div class="temp_bulb_radios">
 							<input type="radio" name="frost" id="manual_temp" checked="true" />
 							<label for="manual_temp">Вручную</label>
 							<input type="radio" name="frost" id="cold_temp"/>
@@ -124,15 +125,17 @@
 							<input type="radio" name="frost" id="warm_temp"/>
 							<label for="warm_temp">Тепло</label>
 							<input type="radio" name="frost" id="hot_temp"/>
-							<label for="hot_temp">Жарко</label>
+							<label id="hot_temp_label" for="hot_temp">Жарко</label>
 							
 						</div>
-  						<input type="range" min="-10" max="+30" value="50" class="slider" id="temp_range">
-  						<div id="temp_l" class="range_label">-10</div>
-						<div id="temp_r" class="range_label">+30</div>
+						<div id="range_sustainer">
+	  						<input type="range" min="-10" max="40" value="30" class="slider" id="temp_range">
+	  						<div id="temp_l" class="range_label">-10</div>
+							<div id="temp_r" class="range_label">+30</div>
+						</div>
 					</div>
 					<div id="bulb_slide_container">
-						<div id="temp_bulb_radios">
+						<div class="temp_bulb_radios">
 							<input type="radio" name="lightrad" id="manual_light" checked="true" />
 							<label for="manual_light">Вручную</label>
 							<input type="radio" name="lightrad" id="day_light"/>
@@ -143,20 +146,20 @@
 							<label for="dawn_light">Рассвет</label>
 							
 						</div>
-  						<input type="range" min="-10" max="+30" value="50" class="slider" id="bulb_range">
-  						<div id="light_l" class="range_label"></div>
-						<div id="light_r" class="range_label"></div>
+						<div id="range_sustainer">
+  							<input type="range" min="-10" max="40" value="30" class="slider" id="bulb_range">
+	  						<div id="light_l" class="range_label"></div>
+							<div id="light_r" class="range_label"></div>
+						</div>
+						
 					</div>
 					<div id="floor_slide_container">
 						<div id="knobo1">
-							<input id="knobo" class="preset2" type="range" min="-10" max="+30" data-width="266" data-height="266" data-angleOffset="220" data-angleRange="280">
+							<input id="knobo" class="preset2" type="range" min="-10" max="30" data-width="266" data-height="266" data-angleOffset="220" data-angleRange="280">
 							
 						</div>
 						
 					</div>
-				</div>
-				<div id="modal_footer">	
-					
 				</div>
 			</div>
 			<div id="modal_btns_wrapper">
