@@ -264,8 +264,8 @@ function load_devices_h() {
 
 
 function scroll_r(){
-	fav_devices.scrollBy({top:0, left: 200, behavior:'smooth'});
-	scroll_index = (fav_devices.scrollLeft + 200) / (fav_devices.scrollWidth-fav_devices.clientWidth);
+	fav_devices.scrollBy({top:0, left: 500, behavior:'smooth'});
+	scroll_index = (fav_devices.scrollLeft + 500) / (fav_devices.scrollWidth-fav_devices.clientWidth);
 	if (scroll_index >= 0.99) {
 		fav_arr_r.disabled = true;
 		fav_arr_r.src = "assets/icon_arrow_left@1x.png";
@@ -274,8 +274,8 @@ function scroll_r(){
 	fav_arr_l.src = "assets/icon_arrow-black_left.svg";
 }
 function scroll_l(){
-	fav_devices.scrollBy({top:0, left: -200, behavior:'smooth'});
-	scroll_index = (fav_devices.scrollLeft - 200) / (fav_devices.scrollWidth-fav_devices.clientWidth);
+	fav_devices.scrollBy({top:0, left: -500, behavior:'smooth'});
+	scroll_index = (fav_devices.scrollLeft - 500) / (fav_devices.scrollWidth-fav_devices.clientWidth);
 	if (scroll_index <= 0.01) {
 		fav_arr_l.disabled = true;
 		fav_arr_l.src = "assets/icon_arrow_left@1x.png";

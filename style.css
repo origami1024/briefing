@@ -783,10 +783,21 @@ body {
 		height: calc(100% - 40px);
 		width: calc(100% - 40px);
 	}
+	#main {
+		overflow-x: hidden;
+		position: relative;
+		top:42px;
+	}
 	#header {/*ham start */
 		border: 0;
 		padding-bottom:11px;
 		padding-top:11px;
+		position: fixed;
+		#background-color: transparent;
+		width: 100%;
+		z-index: 1;
+		right: -7px;
+		top: 0px;
 	}
 	#header input {
 		display: block;
@@ -842,9 +853,7 @@ body {
 	#fav_dev_top_menu_btn {
 		display: block;
 	}
-	#main {
-		overflow-x: hidden;
-	}
+
 	#fav_devices_top {
 		justify-content: space-between;
 	}
