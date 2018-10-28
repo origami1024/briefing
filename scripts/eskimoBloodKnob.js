@@ -429,11 +429,16 @@ Ui.El.Text = function(text, x, y, width, height) {
 Ui.El.Text.prototype = Object.create(Ui.El.prototype);
 
 Ui.El.Text.prototype.center = function(element) {
-
   var width = element.getAttribute('width');
   var height = element.getAttribute('height');
-  this.attr('x', width / 2 - this.node.getBBox().width / 2);
-  this.attr('y', height / 2 + this.node.getBBox().height / 4);
+  var bbw;
+  var bbh;
+  try {bbw = this.node.getBBox().width;}
+  catch(e) {bbw = 0;}
+  try {bbh = this.node.getBBox().height;}
+  catch(e) {bbh = 0;}
+  this.attr('x', width / 2 - bbw / 2);
+  this.attr('y', height / 2 + bbh / 4);
 
 };
 

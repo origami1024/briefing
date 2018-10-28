@@ -310,7 +310,7 @@ function modalApply(){
 function fav_group_change(e) {
 	//alert(e.target.id)
 	filter = e.target.id;
-	filter = filter.substring(7,);
+	filter = filter.substring(7);
 	for (var i = 0; i < devices.length; i++) {
 		if ((devices[i].tags.includes(filter)) || (filter =="all")) {
 			document.getElementById("dev" + i).style.display = "block";
@@ -476,8 +476,8 @@ thumbler.prototype.createElement = function() {
 }
 var thu = new thumbler();
 var kno = new Knob(document.getElementById('knobo'), thu);
-modal.style.display = "none";
-floor_slide_container.style.display = "none";
+//modal.style.display = "none";
+//floor_slide_container.style.display = "none";
 
 
 
