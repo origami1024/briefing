@@ -335,7 +335,7 @@ filter_cam.addEventListener("click", fav_group_change);
 
 modal_apply.addEventListener("click", function(){modalApply()});
 modal_close.addEventListener("click", function(){afterModal()});
-modal.addEventListener("click", function(){if (event.target == modal){afterModal();}});
+modal.addEventListener("click", function (e){if (e.target == modal){afterModal();}});
 
 fav_s_arr_r.addEventListener("click", nextpage);
 fav_s_arr_l.addEventListener("click", prevpage);
@@ -457,6 +457,8 @@ thumbler.prototype.createElement = function() {
         pointerHeight: 6,
         offset: 44
     }));
+    ftext = new Ui.Text(this.value,10,10);
+  	this.addComponent(ftext);
 
     this.addComponent(new Ui.Arc({
     	arcWidth: 0,
@@ -467,13 +469,15 @@ thumbler.prototype.createElement = function() {
   	arc.setAngle(this.options.anglerange);
   	this.el.node.appendChild(arc.node);
   	
-  	ftext = new Ui.Text(this.value);
-  	this.addComponent(ftext);
+  	
   	
 	this.el.node.setAttribute("class", "thumbler");
-}
-kno = new Knob(document.getElementById('knobo'), new thumbler());
 
+}
+var thu = new thumbler();
+var kno = new Knob(document.getElementById('knobo'), thu);
+modal.style.display = "none";
+floor_slide_container.style.display = "none";
 
 
 

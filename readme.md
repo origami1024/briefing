@@ -11,9 +11,6 @@ x) gulp?
 y1) минификаторы css, js, html
 y2) оптимизация картинок
 8) html/css validator
-9) разные браузеры
---moz	- modal - closing by clicking outside
-		- circle slider not working
 
 
 z1) стэк - структ данных

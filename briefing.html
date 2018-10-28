@@ -4,17 +4,17 @@
 	<meta charset="UTF-8">
 	<title>Сводка</title>
 	<link rel="stylesheet" href="briefing.css">
-	<script type="text/javascript" src="scripts/eskimoBloodKnob.js"></script>
+	<script src="scripts/eskimoBloodKnob.js"></script>
 	<meta name="viewport" content="width=device-width">
 </head>
 <body>
 	<header id="header">
 		<input id="hamburger_cb" type="checkbox"/>
 		<ul id="menu">
-			<a class="nav_link" href="newsfeed.html"><li>События</li></a>
-			<a class="nav_link nav_current" href="#"><li>Сводка</li></a>
-			<a class="nav_link" href="#"><li>Устройства</li></a>
-			<a class="nav_link" href="#"><li>Сценарии</li></a>
+			<li><a class="nav_link" href="newsfeed.html">События</a></li>
+			<li><a class="nav_link nav_current" href="">Сводка</a></li>
+			<li><a class="nav_link" href="#">Устройства</a></li>
+			<li><a class="nav_link" href="#">Сценарии</a></li>
 		</ul>
 	</header>
 	<main id="main">
@@ -66,7 +66,7 @@
 			<div id="fav_devices_top">
 				<h3>Избранные устройства</h3>
 				<div id="fav_dev_groups">
-					<input type="radio" name="fav_dev" id="filter_all" checked="true" value="Все" />
+					<input type="radio" name="fav_dev" id="filter_all" checked value="Все" />
 					<label for="filter_all">Все</label>
 					<input type="radio" name="fav_dev" id="filter_kitchen" value="Кухня"/>
 					<label for="filter_kitchen">Кухня</label>
@@ -118,7 +118,7 @@
 				<div id="modal_body">
 					<div id="temp_slide_container">
 						<div class="temp_bulb_radios">
-							<input type="radio" name="frost" id="manual_temp" checked="true" />
+							<input type="radio" name="frost" id="manual_temp" checked />
 							<label for="manual_temp">Вручную</label>
 							<input type="radio" name="frost" id="cold_temp"/>
 							<label for="cold_temp">Холодно</label>
@@ -128,15 +128,15 @@
 							<label id="hot_temp_label" for="hot_temp">Жарко</label>
 							
 						</div>
-						<div id="range_sustainer">
+						<div class="range_sustainer">
 	  						<input type="range" min="-10" max="40" value="30" class="slider" id="temp_range">
 	  						<div id="temp_l" class="range_label">-10</div>
 							<div id="temp_r" class="range_label">+30</div>
 						</div>
 					</div>
-					<div id="bulb_slide_container">
+					<div class="bulb_slide_container">
 						<div class="temp_bulb_radios">
-							<input type="radio" name="lightrad" id="manual_light" checked="true" />
+							<input type="radio" name="lightrad" id="manual_light" checked />
 							<label for="manual_light">Вручную</label>
 							<input type="radio" name="lightrad" id="day_light"/>
 							<label for="day_light">Дневной свет</label>
@@ -189,7 +189,7 @@
 		</div>
 	</template>
 
-	<script type="text/javascript" src="scripts/data.json"></script>
+	<script src="scripts/data.json"></script>
 	<script src="scripts/briefing.js"></script>
 
 

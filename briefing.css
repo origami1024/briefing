@@ -253,11 +253,7 @@ body {
 	      				url("assets/icon_temperature@1x.png") 1x,
 	      				url("assets/icon_temperature@2x.png") 2x
 	    			);
-	  			background-image: 
-	    			image-set(
-	      				url("assets/icon_temperature@1x.png") 1x,
-	      				url("assets/icon_temperature@2x.png") 2x
-	    			);
+
 			}
 			.pic_t_on {
 				background-image: url("assets/icon_temperature_2@1x.png");
@@ -266,11 +262,7 @@ body {
 	      				url("assets/icon_temperature_2@1x.png") 1x,
 	      				url("assets/icon_temperature_2@2x.png") 2x
 	    			);
-	  			background-image: 
-	    			image-set(
-	      				url("assets/icon_temperature_2@1x.png") 1x,
-	      				url("assets/icon_temperature_2@2x.png") 2x
-	    			);
+
 			}
 			.pic_s_off {
 				background-image: url("assets/icon_sun@1x.png");
@@ -279,11 +271,7 @@ body {
 	      				url("assets/icon_sun@1x.png") 1x,
 	      				url("assets/icon_sun@2x.png") 2x
 	    			);
-	  			background-image: 
-	    			image-set(
-	      				url("assets/icon_sun@1x.png") 1x,
-	      				url("assets/icon_sun@2x.png") 2x
-	    			);
+
 			}
 			.pic_s_on {
 				background-image: url("assets/icon_sun_2@1x.png");
@@ -292,11 +280,7 @@ body {
 	      				url("assets/icon_sun_2@1x.png") 1x,
 	      				url("assets/icon_sun_2@2x.png") 2x
 	    			);
-	  			background-image: 
-	    			image-set(
-	      				url("assets/icon_sun_2@1x.png") 1x,
-	      				url("assets/icon_sun_2@2x.png") 2x
-	    			);
+
 			}
 			.pic_time {
 				background-image: url("assets/icon_scheduled@1x.png");
@@ -460,6 +444,8 @@ body {
 		text-decoration: none;
 		font-weight: bold;
 		transition: color 0.3s ease;
+		display: inline-block;
+
 
 	}
 	.nav_link:visited {
@@ -551,7 +537,7 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    display: none;
+    #display: none;
   	align-items: center;
   	justify-content: center;
   	background-color: rgba(50,50,50,0.6);
@@ -681,7 +667,7 @@ body {
 }
 
 
-.slider::focus {
+.slider:focus {
 	outline: none;
 }
 .slider::-webkit-slider-thumb {
@@ -713,6 +699,9 @@ body {
 }/*ham end */
 
 @media (max-width: 450px) {
+	.nav_link {
+		width: 100%;
+	}
 	#light_r {
 		right:17px;
 	}
@@ -736,7 +725,7 @@ body {
 		position: relative;
 
 	}
-	#range_sustainer {
+	.range_sustainer {
 		min-height: 335px;
 		width: 335px;
 		transform: rotate(270deg);
@@ -987,7 +976,7 @@ body {
 #floor_slide_container{
 	width: 100%;
   	display: flex;
-  	display: none;
+  	#display: none;
   	justify-content: center;
   	position: relative;
 }

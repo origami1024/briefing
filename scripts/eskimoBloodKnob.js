@@ -429,11 +429,12 @@ Ui.El.Text = function(text, x, y, width, height) {
 Ui.El.Text.prototype = Object.create(Ui.El.prototype);
 
 Ui.El.Text.prototype.center = function(element) {
-  
+
   var width = element.getAttribute('width');
   var height = element.getAttribute('height');
   this.attr('x', width / 2 - this.node.getBBox().width / 2);
   this.attr('y', height / 2 + this.node.getBBox().height / 4);
+
 };
 
 Ui.El.Arc = function(options) {
