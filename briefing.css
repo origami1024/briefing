@@ -100,10 +100,6 @@ body {
 		.weather_buff:after{
 			content: url("assets/cloud-drizzle.png");
 		}
-
-	
-		
-
 		#all_devices_wrapper {
 			margin-left: auto;
 			width: 200px;
@@ -114,14 +110,9 @@ body {
 			/*height: 291px;*/
 		}
 		
-
-
-
 		#all_devices {
 			display: flex;
 			flex-direction: column;
-
-			
 			overflow-y: scroll;
 			width: 217px;
 			height: 291px;
@@ -173,10 +164,6 @@ body {
 			justify-content: flex-end;
 		}
 	
-
-
-
-
 			.pic {
 				width: 24px;
 				height: 24px;
@@ -422,7 +409,6 @@ body {
 	}
 
 #footer {
-	#border-top: 1px solid #F0F0F0;
 	font-size: 0.75rem;
 	width: 96.5%;
 	margin:auto;
@@ -436,8 +422,6 @@ body {
 	margin: 0;
 	padding: 0;
 	margin: 24px 0;
-	
-
 }
 	.nav_link {
 		color:#858585;
