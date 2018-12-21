@@ -106,7 +106,8 @@ body {
 			overflow-y: hidden;
 			overflow-x: hidden;
 			position: relative;
-			height: 291px;
+			height: 331px;
+			top: -20px;
 			/*height: 291px;*/
 		}
 		
@@ -115,7 +116,7 @@ body {
 			flex-direction: column;
 			overflow-y: scroll;
 			width: 217px;
-			height: 291px;
+			height: 331px;
 			position: relative;
 			
 		}
@@ -470,7 +471,7 @@ body {
     	border: 0;
     	background-image: url("assets/icon_filter_dropdown.svg");
     	background-repeat: no-repeat;
-    	background-position: calc(100% - 15px) center
+    	background-position: calc(100% - 15px) center;
     	
     	}
     
