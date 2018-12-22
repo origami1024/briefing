@@ -923,7 +923,7 @@ body {
 	}
 	#all_devices_wrapper {
 		height: 120px;
-		
+		top: 0px;
 		margin-left: 0;
 		margin-top:auto;
 		
